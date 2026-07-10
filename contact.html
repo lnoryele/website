@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Oryele | Request Briefing</title>
+  <meta name="description" content="Request an executive briefing or product discussion for Oryele.">
+  <link rel="canonical" href="https://oryele.com/contact">
+  <link rel="icon" href="/assets/oryele-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="bg-grid">
+  <div class="bg-glow"></div>
+  <canvas id="network"></canvas>
+  <div data-site-chrome="header"></div>
+  <script src="/chrome.js"></script>
+
+  <section class="page-hero">
+    <div class="eyebrow"><span class="dot"></span>Contact</div>
+    <h1>Request Briefing</h1>
+    <p class="lead">Request an executive briefing or product discussion for Oryele. Share a few details and our team will follow up.</p>
+  </section>
+
+  <section class="section tight contact-section">
+    <div class="contact-layout">
+      <div class="contact-form-panel">
+        <h2>Send a message</h2>
+        <p class="contact-form-lead">Tell us about your organization and what you’d like to discuss.</p>
+        <form class="form contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <label for="contact-name">Full name<span aria-hidden="true"> *</span></label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" required maxlength="120" placeholder="Jane Smith">
+          </div>
+          <div class="form-row">
+            <label for="contact-email">Work email<span aria-hidden="true"> *</span></label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="160" placeholder="jane@company.com">
+          </div>
+          <div class="form-row form-row-2">
+            <div>
+              <label for="contact-company">Company</label>
+              <input id="contact-company" name="company" type="text" autocomplete="organization" maxlength="120" placeholder="Company name">
+            </div>
+            <div>
+              <label for="contact-phone">Phone</label>
+              <input id="contact-phone" name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="+1 (555) 000-0000">
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="contact-interest">I’m interested in</label>
+            <select id="contact-interest" name="interest">
+              <option value="Executive briefing" selected>Executive briefing</option>
+              <option value="Product demo">Product demo</option>
+              <option value="Pricing discussion">Pricing discussion</option>
+              <option value="Partnership">Partnership</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="contact-message">Message<span aria-hidden="true"> *</span></label>
+            <textarea id="contact-message" name="message" required maxlength="2000" placeholder="What would you like to cover in the briefing?"></textarea>
+          </div>
+          <p class="form-note">Required fields are marked with *. Submissions go to <a href="mailto:info@oryele.com">info@oryele.com</a>.</p>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Submit request</button>
+          </div>
+          <p class="form-status" id="contact-status" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+
+      <aside class="contact-aside">
+        <div class="card">
+          <span class="tag">Email</span>
+          <h3>info@oryele.com</h3>
+          <p>Product inquiries, partnership discussions, and early-access conversations.</p>
+          <a class="btn" href="mailto:info@oryele.com">Email info</a>
+        </div>
+        <div class="card">
+          <span class="tag">Sales</span>
+          <h3>sales@oryele.com</h3>
+          <p>Pricing, plans, and commercial conversations for your team.</p>
+          <a class="btn" href="mailto:sales@oryele.com">Email sales</a>
+        </div>
+        <div class="card">
+          <span class="tag">Office</span>
+          <h3>Oryele LLC</h3>
+          <p>1021 Broad St. #1129<br>Shrewsbury, NJ 07702<br>United States</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <div data-site-chrome="footer"></div>
+  <script src="/app.js"></script>
+  <script>
+    (() => {
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('contact-status');
+      if (!form || !status) return;
+
+      function showStatus(message, ok) {
+        status.hidden = false;
+        status.textContent = message;
+        status.classList.toggle('is-ok', ok);
+        status.classList.toggle('is-error', !ok);
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!form.reportValidity()) {
+          showStatus('Please complete the required fields.', false);
+          return;
+        }
+
+        const data = new FormData(form);
+        const name = String(data.get('name') || '').trim();
+        const email = String(data.get('email') || '').trim();
+        const company = String(data.get('company') || '').trim();
+        const phone = String(data.get('phone') || '').trim();
+        const interest = String(data.get('interest') || '').trim();
+        const message = String(data.get('message') || '').trim();
+
+        const subject = encodeURIComponent(`Oryele briefing request — ${name}`);
+        const body = encodeURIComponent(
+          [
+            `Name: ${name}`,
+            `Email: ${email}`,
+            `Company: ${company || '—'}`,
+            `Phone: ${phone || '—'}`,
+            `Interest: ${interest}`,
+            '',
+            'Message:',
+            message
+          ].join('\n')
+        );
+
+        window.location.href = `mailto:info@oryele.com?subject=${subject}&body=${body}`;
+        showStatus('Opening your email app to send the request. If nothing opens, email info@oryele.com directly.', true);
+        form.reset();
+      });
+    })();
+  </script>
+</body>
+</html>
