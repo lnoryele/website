@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Oryele | Request a Briefing</title>
+  <meta name="description" content="Request an executive briefing or product discussion for Oryele.">
+  <link rel="canonical" href="https://oryele.com/contact.html">
+  <link rel="icon" href="assets/oryele-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;650;750;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-grid contact-page">
+  <div class="bg-glow"></div>
+  <canvas id="network"></canvas>
+
+  <nav class="nav">
+    <a class="brand" href="index.html"><img src="assets/oryele-logo.png" alt="Oryele"></a>
+    <div class="links">
+      <a href="platform.html">Platform</a><a href="solutions.html">Solutions</a><a href="digital-workforce.html">Digital Workforce</a><a href="communications.html">Communications</a><a href="pricing.html">Pricing</a><a href="trust.html">Trust</a><a href="resources.html">Resources</a><a class="btn" href="https://app.oryele.com">Login</a><a class="btn light" href="contact.html" aria-current="page">Request Briefing</a>
+    </div>
+    <button class="menu" type="button">Menu</button>
+  </nav>
+  <div class="mobile">
+    <a href="platform.html">Platform</a><a href="solutions.html">Solutions</a><a href="digital-workforce.html">Digital Workforce</a><a href="communications.html">Communications</a><a href="pricing.html">Pricing</a><a href="trust.html">Trust</a><a href="resources.html">Resources</a><a href="contact.html">Contact</a><a href="https://app.oryele.com">Login</a>
+  </div>
+
+  <main class="contact-main">
+    <section class="briefing-panel" aria-labelledby="briefing-title">
+      <h1 id="briefing-title">Request a briefing</h1>
+      <p>Tell us where execution is breaking down. We will follow up within one business day to schedule your briefing.</p>
+
+      <div class="form-success" id="form-success" role="status" hidden>
+        Thank you. Your briefing request has been submitted. Our team will contact you within one business day.
+      </div>
+      <div class="form-success" id="form-local-notice" role="status" hidden>
+        Your email application has been opened with the briefing request addressed to info@oryele.com. Send the prepared email to complete your request.
+      </div>
+
+      <form class="briefing-form" id="briefing-form" action="https://formsubmit.co/info@oryele.com" method="POST">
+        <input type="hidden" name="_subject" value="New Oryele Briefing Request">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://oryele.com/contact.html?submitted=1">
+        <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off">
+
+        <div class="briefing-grid">
+          <label><span class="sr-only">Name</span><input type="text" name="Name" placeholder="Name" autocomplete="name" required></label>
+          <label><span class="sr-only">Company</span><input type="text" name="Company" placeholder="Company" autocomplete="organization" required></label>
+          <label><span class="sr-only">Email</span><input type="email" name="Email" placeholder="Email" autocomplete="email" required></label>
+          <label><span class="sr-only">Industry</span>
+            <select name="Industry" required>
+              <option value="" selected disabled>Industry</option>
+              <option>Accounting</option>
+              <option>Insurance</option>
+              <option>Legal</option>
+              <option>Financial Services</option>
+              <option>Healthcare</option>
+              <option>Professional Services</option>
+              <option>Technology</option>
+              <option>Other</option>
+            </select>
+          </label>
+        </div>
+        <label class="briefing-message"><span class="sr-only">Business process to improve</span><textarea name="Business Process" placeholder="What business process do you want to improve?" required></textarea></label>
+        <button class="briefing-submit" type="submit">Request My Briefing</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main"><div class="footer-company"><img src="assets/oryele-icon-transparent.png" alt="Oryele"><div><strong>Oryele LLC</strong><p>1021 Broad St. #1129<br>Shrewsbury, NJ 07702<br>United States</p></div></div><div class="footer-contact"><span class="footer-mail" aria-hidden="true">✉</span><div><strong>Sales Inquiries</strong><a href="mailto:sales@oryele.com">sales@oryele.com</a></div></div><div class="footer-contact"><span class="footer-mail" aria-hidden="true">✉</span><div><strong>General Inquiries</strong><a href="mailto:info@oryele.com">info@oryele.com</a></div></div><div class="footer-copyright">© 2026 Oryele LLC.<br>All rights reserved.</div></div>
+    <div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a href="sms-consent.html">SMS Policy</a><a href="cookies.html">Cookie Policy</a><a href="contact.html">Contact</a><a href="sitemap.html">Sitemap</a></div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

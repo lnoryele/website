@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Oryele | Enterprise Execution Platform</title>
+  <meta name="description" content="Oryele orchestrates digital workers, communications, documents, knowledge, and AI across your organization.">
+  <link rel="canonical" href="https://oryele.com/">
+  <link rel="icon" href="assets/oryele-icon.png">
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: #010711; }
+    body { overflow-x: hidden; font-family: Arial, Helvetica, sans-serif; }
+    .page-shell {
+      position: relative;
+      width: 100vw;
+      max-width: none;
+      margin: 0;
+      aspect-ratio: 3 / 2;
+      background: #010711 url('assets/oryele-homepage-reference.png') top center / 100% 100% no-repeat;
+    }
+    .hotspot {
+      position: absolute;
+      display: block;
+      z-index: 3;
+      background: transparent;
+      border: 0;
+      color: transparent;
+      overflow: hidden;
+      white-space: nowrap;
+      text-indent: -9999px;
+    }
+    .hotspot:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 2px;
+      border-radius: 8px;
+    }
+    .capability-hotspot {
+      z-index: 4;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+    .capability-hotspot:hover,
+    .capability-hotspot:focus-visible {
+      background: rgba(10, 108, 255, .13);
+      border-color: rgba(78, 166, 255, .95);
+      box-shadow: 0 0 18px rgba(0, 119, 255, .65), inset 0 0 18px rgba(20, 113, 255, .12);
+      transform: translateX(-2px);
+      outline: none;
+    }
+    .cap-digital { left: 73.7%; top: 9.8%; width: 23.4%; height: 7.4%; }
+    .cap-workflow { left: 73.7%; top: 17.9%; width: 23.4%; height: 7.4%; }
+    .cap-communications { left: 73.7%; top: 25.9%; width: 23.4%; height: 7.4%; }
+    .cap-knowledge { left: 73.7%; top: 33.9%; width: 23.4%; height: 7.4%; }
+    .cap-governance { left: 73.7%; top: 41.9%; width: 23.4%; height: 7.4%; }
+    .cap-analytics { left: 73.7%; top: 50.0%; width: 23.4%; height: 7.4%; }
+    .capability-hotspot.is-active {
+      background: rgba(10, 108, 255, .17);
+      border-color: rgba(96, 180, 255, 1);
+      box-shadow: 0 0 22px rgba(0, 119, 255, .78), inset 0 0 20px rgba(20, 113, 255, .16);
+    }
+    .capability-tooltip {
+      position: absolute;
+      z-index: 12;
+      width: min(330px, 22vw);
+      padding: 18px 20px 19px;
+      border: 1px solid rgba(82, 166, 255, .92);
+      border-radius: 14px;
+      background: linear-gradient(145deg, rgba(4, 18, 38, .97), rgba(1, 9, 22, .97));
+      box-shadow: 0 18px 48px rgba(0, 0, 0, .46), 0 0 26px rgba(0, 111, 255, .30), inset 0 0 22px rgba(15, 91, 190, .09);
+      color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(10px);
+      transition: opacity .16s ease, transform .16s ease, visibility .16s ease;
+      pointer-events: none;
+      text-indent: 0;
+      white-space: normal;
+    }
+    .capability-tooltip.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+    .capability-tooltip::after {
+      content: '';
+      position: absolute;
+      right: -9px;
+      top: 28px;
+      width: 16px;
+      height: 16px;
+      border-top: 1px solid rgba(82, 166, 255, .92);
+      border-right: 1px solid rgba(82, 166, 255, .92);
+      background: rgba(3, 15, 32, .98);
+      transform: rotate(45deg);
+    }
+    .capability-tooltip .eyebrow {
+      margin: 0 0 7px;
+      color: #2494ff;
+      font-size: clamp(9px, .72vw, 12px);
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .capability-tooltip h2 {
+      margin: 0 0 8px;
+      font-size: clamp(16px, 1.45vw, 24px);
+      line-height: 1.15;
+    }
+    .capability-tooltip p {
+      margin: 0;
+      color: #d5e1ef;
+      font-size: clamp(11px, .92vw, 15px);
+      line-height: 1.48;
+    }
+    /* Header navigation */
+    .logo { left: 1.5%; top: 1.5%; width: 14.5%; height: 5.2%; }
+    .platform { left: 23.7%; top: 2.0%; width: 6.5%; height: 4.5%; }
+    .solutions { left: 30.7%; top: 2.0%; width: 6.5%; height: 4.5%; }
+    .workforce { left: 37.6%; top: 2.0%; width: 10.3%; height: 4.5%; }
+    .communications { left: 48.0%; top: 2.0%; width: 11.0%; height: 4.5%; }
+    .pricing { left: 59.2%; top: 2.0%; width: 5.0%; height: 4.5%; }
+    .resources { left: 64.7%; top: 2.0%; width: 7.2%; height: 4.5%; }
+    .about { left: 73.0%; top: 2.0%; width: 5.2%; height: 4.5%; }
+    .login-top {
+      position: absolute;
+      left: 79.2%;
+      top: 1.85%;
+      width: 5.4%;
+      height: 4.5%;
+      z-index: 6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(104, 157, 224, .62);
+      border-radius: 10px;
+      background: rgba(3, 13, 29, .82);
+      box-shadow: inset 0 0 14px rgba(15, 91, 190, .08);
+      color: #fff;
+      font-size: clamp(11px, 1.05vw, 16px);
+      font-weight: 700;
+      text-decoration: none;
+      transition: border-color .2s ease, background .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+    .login-top:hover, .login-top:focus-visible {
+      border-color: #4ca2ff;
+      background: rgba(8, 49, 105, .94);
+      box-shadow: 0 0 18px rgba(0, 119, 255, .42);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .demo-top { left: 85.8%; top: 1.6%; width: 11.3%; height: 4.9%; }
+    /* Hero CTAs */
+    .demo-main { left: 3.5%; top: 51.2%; width: 13.3%; height: 5.4%; }
+    .explore { left: 18.5%; top: 51.2%; width: 13.3%; height: 5.4%; }
+    /* Footer contacts and links */
+    .sales-email { left: 32.4%; top: 85.0%; width: 13.3%; height: 4.8%; }
+    .info-email { left: 53.0%; top: 85.0%; width: 13.0%; height: 4.8%; }
+    .linkedin { left: 71.1%; top: 83.3%; width: 4.2%; height: 6.4%; }
+    .youtube { left: 75.3%; top: 83.3%; width: 4.2%; height: 6.4%; }
+    .privacy { left: 18.5%; top: 94.1%; width: 9.2%; height: 4.2%; }
+    .terms { left: 31.2%; top: 94.1%; width: 11.5%; height: 4.2%; }
+    .sms { left: 46.4%; top: 94.1%; width: 8.3%; height: 4.2%; }
+    .cookies { left: 57.7%; top: 94.1%; width: 9.3%; height: 4.2%; }
+    .contact { left: 69.3%; top: 94.1%; width: 6.8%; height: 4.2%; }
+    .sitemap { left: 77.7%; top: 94.1%; width: 6.6%; height: 4.2%; }
+    @media (max-width: 700px) {
+      .page-shell { min-width: 700px; transform-origin: top left; }
+      body { overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page-shell" aria-label="Oryele homepage">
+    <a class="hotspot logo" href="index.html">Oryele home</a>
+    <a class="hotspot platform" href="platform.html">Platform</a>
+    <a class="hotspot solutions" href="solutions.html">Solutions</a>
+    <a class="hotspot workforce" href="digital-workforce.html">Digital Workforce</a>
+    <a class="hotspot communications" href="communications.html">Communications</a>
+    <a class="hotspot pricing" href="pricing.html">Pricing</a>
+    <a class="hotspot resources" href="resources.html">Resources</a>
+    <a class="hotspot about" href="about.html">About</a>
+    <a class="login-top" href="https://app.oryele.com">Login</a>
+    <a class="hotspot demo-top" href="contact.html">Request a Demo</a>
+    <a class="hotspot demo-main" href="contact.html">Request a Demo</a>
+    <a class="hotspot explore" href="platform.html">Explore Platform</a>
+    <a class="hotspot capability-hotspot cap-digital" href="digital-workforce.html" data-capability="digital" aria-label="Digital Workforce details">Digital Workforce</a>
+    <a class="hotspot capability-hotspot cap-workflow" href="workflow-engine.html" data-capability="workflow" aria-label="Workflow Engine details">Workflow Engine</a>
+    <a class="hotspot capability-hotspot cap-communications" href="communications.html" data-capability="communications" aria-label="Communications details">Communications</a>
+    <a class="hotspot capability-hotspot cap-knowledge" href="knowledge-management.html" data-capability="knowledge" aria-label="Knowledge details">Knowledge</a>
+    <a class="hotspot capability-hotspot cap-governance" href="trust.html" data-capability="governance" aria-label="Governance details">Governance</a>
+    <a class="hotspot capability-hotspot cap-analytics" href="analytics.html" data-capability="analytics" aria-label="Analytics details">Analytics</a>
+    <a class="hotspot sales-email" href="mailto:sales@oryele.com">sales@oryele.com</a>
+    <a class="hotspot info-email" href="mailto:info@oryele.com">info@oryele.com</a>
+    <a class="hotspot linkedin" href="https://www.linkedin.com/company/oryele" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="hotspot youtube" href="https://www.youtube.com/@oryele" target="_blank" rel="noopener">YouTube</a>
+    <a class="hotspot privacy" href="privacy.html">Privacy Policy</a>
+    <a class="hotspot terms" href="terms.html">Terms and Conditions</a>
+    <a class="hotspot sms" href="sms-consent.html">SMS Policy</a>
+    <a class="hotspot cookies" href="cookies.html">Cookie Policy</a>
+    <a class="hotspot contact" href="contact.html">Contact</a>
+    <a class="hotspot sitemap" href="sitemap.html">Sitemap</a>
+
+    <aside class="capability-tooltip" id="capabilityTooltip" role="tooltip" aria-hidden="true">
+      <div class="eyebrow">Oryele Platform Capability</div>
+      <h2 id="capabilityTitle"></h2>
+      <p id="capabilityText"></p>
+    </aside>
+  </main>
+  <script>
+    (() => {
+      const summaries = {
+        digital: { title: 'Digital Workforce', text: 'Deploy AI-powered digital workers that execute repeatable business tasks, coordinate across systems, and escalate exceptions when human judgment is required.' },
+        workflow: { title: 'Workflow Engine', text: 'Design and orchestrate end-to-end processes across people, applications, documents, and AI so work moves consistently from initiation through completion.' },
+        communications: { title: 'Communications', text: 'Unify email, SMS, voice, and calendar activity within each workflow, keeping customer and operational interactions connected to the work they support.' },
+        knowledge: { title: 'Knowledge', text: 'Centralize documents, policies, and operational knowledge so teams and digital workers can retrieve trusted information securely and in context.' },
+        governance: { title: 'Governance', text: 'Apply role-based controls, policy enforcement, audit trails, retention, and compliance oversight to every workflow and AI-assisted action.' },
+        analytics: { title: 'Analytics', text: 'Monitor work, performance, bottlenecks, service levels, and outcomes in real time, turning execution data into practical operational insight.' }
+      };
+
+      const shell = document.querySelector('.page-shell');
+      const tooltip = document.getElementById('capabilityTooltip');
+      const title = document.getElementById('capabilityTitle');
+      const text = document.getElementById('capabilityText');
+      const buttons = [...document.querySelectorAll('[data-capability]')];
+
+      function showSummary(button) {
+        const item = summaries[button.dataset.capability];
+        if (!item) return;
+        buttons.forEach(b => b.classList.toggle('is-active', b === button));
+        title.textContent = item.title;
+        text.textContent = item.text;
+
+        const shellRect = shell.getBoundingClientRect();
+        const buttonRect = button.getBoundingClientRect();
+        const tooltipWidth = tooltip.offsetWidth || Math.min(330, shellRect.width * .22);
+        const left = buttonRect.left - shellRect.left - tooltipWidth - 22;
+        const maxTop = shellRect.height - (tooltip.offsetHeight || 150) - 12;
+        const top = Math.max(12, Math.min(buttonRect.top - shellRect.top + 2, maxTop));
+        tooltip.style.left = `${left}px`;
+        tooltip.style.top = `${top}px`;
+        tooltip.classList.add('open');
+        tooltip.setAttribute('aria-hidden', 'false');
+      }
+
+      function hideSummary() {
+        tooltip.classList.remove('open');
+        tooltip.setAttribute('aria-hidden', 'true');
+        buttons.forEach(b => b.classList.remove('is-active'));
+      }
+
+      buttons.forEach(button => {
+        button.addEventListener('mouseenter', () => showSummary(button));
+        button.addEventListener('focus', () => showSummary(button));
+        button.addEventListener('mouseleave', hideSummary);
+        button.addEventListener('blur', hideSummary);
+      });
+      window.addEventListener('resize', hideSummary, { passive: true });
+    })();
+  </script>
+</body>
+</html>

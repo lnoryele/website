@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://oryele.com/sitemap.xml
