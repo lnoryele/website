@@ -1,0 +1,78 @@
+ORYELE CLOUDFLARE DOMAIN REDIRECT SETUP
+
+PRIMARY/CANONICAL DOMAIN
+https://oryele.ai
+
+Two redirect rules are required. Create each rule in the Cloudflare zone named below.
+
+============================================================
+RULE 1 — ORYELE.COM AND WWW.ORYELE.COM TO ORYELE.AI
+============================================================
+Create this rule in the ORYELE.COM Cloudflare zone:
+
+1. Cloudflare Dashboard > oryele.com > Rules > Redirect Rules.
+2. Create a Single Redirect named: Oryele .com to .ai
+3. Incoming requests expression:
+   (http.host eq "oryele.com") or (http.host eq "www.oryele.com")
+4. Dynamic target URL expression:
+   concat("https://oryele.ai", http.request.uri.path)
+5. Status code: 301
+6. Preserve query string: Enabled
+7. Deploy the rule.
+
+DNS requirement:
+The oryele.com apex and www records must exist and be Proxied (orange cloud) for the redirect rule to execute.
+
+============================================================
+RULE 2 — WWW.ORYELE.AI TO ORYELE.AI
+============================================================
+Create this rule in the ORYELE.AI Cloudflare zone:
+
+1. Cloudflare Dashboard > oryele.ai > Rules > Redirect Rules.
+2. Create a Single Redirect named: Oryele www to apex
+3. Incoming requests expression:
+   http.host eq "www.oryele.ai"
+4. Dynamic target URL expression:
+   concat("https://oryele.ai", http.request.uri.path)
+5. Status code: 301
+6. Preserve query string: Enabled
+7. Deploy the rule.
+
+DNS requirement:
+Create a www DNS record in the oryele.ai zone and set it to Proxied (orange cloud). A typical configuration is:
+   Type: CNAME
+   Name: www
+   Target: oryele.ai
+   Proxy status: Proxied
+
+Do not leave www.oryele.ai pointed at an origin that returns a 502. Cloudflare must receive the request so the redirect rule can run.
+
+============================================================
+REQUIRED TESTS
+============================================================
+https://oryele.com/ -> https://oryele.ai/
+https://oryele.com/about.html -> https://oryele.ai/about.html
+https://www.oryele.com/contact.html?source=test -> https://oryele.ai/contact.html?source=test
+https://www.oryele.ai/ -> https://oryele.ai/
+https://www.oryele.ai/privacy?source=test -> https://oryele.ai/privacy?source=test
+
+Each test must return one permanent 301 redirect and preserve the path and query string.
+
+============================================================
+PRIVACY PAGE DEPLOYMENT CHECK
+============================================================
+After uploading this package, purge the Cloudflare cache for:
+   https://oryele.ai/privacy
+   https://oryele.ai/privacy.html
+
+Then confirm the live page displays:
+   Website: oryele.ai
+
+The corrected privacy.html file in this package contains no www.oryele.com website reference.
+
+============================================================
+GOOGLE SEARCH CONSOLE
+============================================================
+1. Verify Domain properties for oryele.ai and oryele.com using DNS verification.
+2. Submit https://oryele.ai/sitemap.xml in the oryele.ai property only.
+3. The 301 redirects, canonical tags, sitemap URLs, and internal links establish oryele.ai as canonical.
