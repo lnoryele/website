@@ -168,40 +168,4 @@
 })();
 
 
-(() => {
-  const form = document.getElementById('briefing-form');
-  if (!form) return;
 
-  // FormSubmit requires the page to be served over http(s). During a local
-  // file preview, use the visitor's email application instead of failing.
-  if (window.location.protocol !== 'file:') return;
-
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    if (!form.reportValidity()) return;
-
-    const data = new FormData(form);
-    const subject = 'New Oryele Briefing Request';
-    const body = [
-      'Name: ' + (data.get('Name') || ''),
-      'Company: ' + (data.get('Company') || ''),
-      'Email: ' + (data.get('Email') || ''),
-      'Industry: ' + (data.get('Industry') || ''),
-      '',
-      'Business process to improve:',
-      String(data.get('Business Process') || '')
-    ].join('\n');
-
-    const mailto = 'mailto:info@oryele.com?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(body);
-
-    const notice = document.getElementById('form-local-notice');
-    if (notice) {
-      notice.hidden = false;
-      notice.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-
-    window.location.href = mailto;
-  });
-})();
