@@ -1,0 +1,61 @@
+# Oryele
+
+> Oryele is an enterprise execution platform for governed AI digital workers, workflow automation, document intelligence, communications, integrations, analytics, and operational control.
+
+## Primary pages
+- [Home](https://oryele.ai/): Company and platform overview
+- [Platform](https://oryele.ai/platform.html): Enterprise execution platform
+- [Digital Workforce](https://oryele.ai/digital-workforce.html): Governed AI digital workers
+- [Workflow Engine](https://oryele.ai/workflow-engine.html): Workflow orchestration
+- [Solutions](https://oryele.ai/solutions.html): Industry and operational solutions
+- [Accounting](https://oryele.ai/accounting.html): Accounting-firm workflows
+- [Insurance](https://oryele.ai/insurance.html): Insurance workflows
+- [Legal](https://oryele.ai/legal.html): Legal workflows
+- [Integrations](https://oryele.ai/integrations.html): Enterprise integrations
+- [Trust](https://oryele.ai/trust.html): Security, governance, and trust
+- [Resources](https://oryele.ai/resources.html): White papers and resources
+- [Contact](https://oryele.ai/contact.html): Contact and enterprise briefing
+
+## Policies
+- [Privacy](https://oryele.ai/privacy.html)
+- [Terms](https://oryele.ai/terms.html)
+- [Cookie Policy](https://oryele.ai/cookies.html)
+- [SMS Consent](https://oryele.ai/sms-consent.html)
+
+## Contact
+- General: info@oryele.com
+- Sales: sales@oryele.com
+
+## Sitemap
+- https://oryele.ai/sitemap.xml
+
+
+## Knowledge Center
+- [AI Insights & Guides](https://oryele.ai/knowledge-center/)
+- [What Is an AI Digital Worker?](https://oryele.ai/what-is-an-ai-digital-worker/)
+- [What Is Enterprise Execution?](https://oryele.ai/what-is-enterprise-execution/)
+- [Enterprise AI Governance](https://oryele.ai/enterprise-ai-governance/)
+- [AI Document Intelligence](https://oryele.ai/ai-document-intelligence/)
+- [Workflow Orchestration](https://oryele.ai/workflow-orchestration/)
+- [Enterprise Agentic AI](https://oryele.ai/enterprise-agentic-ai/)
+
+## Enterprise AI Knowledge Library
+- [Knowledge Center](https://oryele.ai/knowledge-center/)
+- [AI Digital Worker vs. Chatbot](https://oryele.ai/ai-digital-worker-vs-chatbot/): Understand the operational differences between conversational assistants and governed digital workers that execute end-to-end work.
+- [How to Deploy AI Digital Workers](https://oryele.ai/how-to-deploy-ai-digital-workers/): A phased enterprise deployment model covering process selection, controls, integrations, testing, human oversight, and scale.
+- [Enterprise AI Digital Worker Use Cases](https://oryele.ai/ai-digital-worker-use-cases/): Examples across accounting, insurance, legal, service operations, document handling, and back-office execution.
+- [What Is an Enterprise Execution Layer?](https://oryele.ai/enterprise-execution-layer/): Learn how an execution layer coordinates work across systems and teams while maintaining governance and visibility.
+- [Enterprise Execution vs. Workflow Automation](https://oryele.ai/enterprise-execution-vs-workflow-automation/): Why isolated automation is different from a governed operating layer for end-to-end execution.
+- [Enterprise Execution Operating Model](https://oryele.ai/enterprise-execution-operating-model/): A practical operating model for ownership, controls, exceptions, metrics, and continuous improvement.
+- [Enterprise AI Governance Framework](https://oryele.ai/ai-governance-framework/): A structured framework for accountability, risk classification, approvals, access, monitoring, and lifecycle controls.
+- [Human-in-the-Loop AI Governance](https://oryele.ai/human-in-the-loop-ai/): How to design review, approval, exception, and escalation controls without eliminating the benefits of automation.
+- [AI Audit Trails and Compliance](https://oryele.ai/ai-audit-trails-and-compliance/): What enterprises should record to demonstrate who did what, why, under which policy, and with what result.
+- [Intelligent Document Processing Explained](https://oryele.ai/intelligent-document-processing/): A clear view of ingestion, classification, extraction, validation, routing, retention, and exception handling.
+- [OCR vs. AI Document Intelligence](https://oryele.ai/ocr-vs-document-intelligence/): Why character recognition alone is not enough for context-aware, governed enterprise document execution.
+- [Document Automation Controls](https://oryele.ai/document-automation-controls/): Controls for confidence thresholds, human review, versioning, retention, legal hold, privacy, and auditability.
+- [Workflow Orchestration vs. Automation](https://oryele.ai/workflow-orchestration-vs-automation/): Understand the difference between automating a task and coordinating an entire business process.
+- [Enterprise Workflow Design Principles](https://oryele.ai/enterprise-workflow-design/): Principles for ownership, state, approvals, service levels, exceptions, integrations, and observability.
+- [Workflow Exception Management](https://oryele.ai/workflow-exception-management/): How mature platforms detect, route, resolve, and learn from operational exceptions.
+- [Agentic AI vs. Generative AI](https://oryele.ai/agentic-ai-vs-generative-ai/): Compare content generation with goal-directed systems that plan, use tools, maintain state, and execute actions.
+- [Enterprise Agentic AI Architecture](https://oryele.ai/enterprise-agentic-ai-architecture/): Core architecture components for identity, tools, memory, orchestration, policy, monitoring, and human control.
+- [Agentic AI Risk Controls](https://oryele.ai/agentic-ai-risk-controls/): Controls for permissions, scope, data access, action approval, rollback, monitoring, and accountability.

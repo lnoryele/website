@@ -1,0 +1,21 @@
+ORYELE COMPLETE SEO UPDATE
+
+Completed:
+1. Added visible semantic homepage content with one H1 and four supporting H2 sections.
+2. Removed the off screen hidden SEO content.
+3. Updated the homepage title and meta description without dash based branding.
+4. Added robots directives.
+5. Added Open Graph and X metadata.
+6. Added canonical URLs.
+7. Rebuilt structured data as Organization, WebSite, and WebPage schema.
+8. Added LinkedIn, GitHub, and YouTube to sameAs.
+9. Added consistent metadata to all HTML pages.
+10. Updated sitemap last modified dates.
+11. Removed macOS metadata from the ZIP.
+
+After deployment:
+1. Confirm https://oryele.ai/assets/oryele-logo.png loads directly.
+2. Confirm the Crunchbase profile is public, then add its exact public URL to the Organization sameAs list.
+3. Submit sitemap.xml in Google Search Console.
+4. Inspect https://oryele.ai/ and request indexing.
+5. Verify the homepage with Schema.org Validator and Google Rich Results Test.
