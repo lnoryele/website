@@ -1,0 +1,10 @@
+{
+  "pages_checked": 29,
+  "custom_404": true,
+  "extensionless_canonicals": true,
+  "deployment_root_separated_from_public": true,
+  "invalid_redirects_removed": true,
+  "internal_reports_removed": true,
+  "issues": [],
+  "result": "PASS"
+}

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Oryele AI Enterprise Execution Platform</title>
+<meta content="Oryele is an AI Enterprise Execution Platform that deploys governed AI Digital Workers to automate workflows, orchestrate business processes, manage documents and communications, and execute work securely across enterprise systems." name="description"/>
+<link href="assets/oryele-icon.png" rel="icon"/>
+<style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: #010711; }
+    body { overflow-x: hidden; font-family: Arial, Helvetica, sans-serif; }
+    .page-shell {
+      position: relative;
+      width: 100vw;
+      max-width: none;
+      margin: 0;
+      aspect-ratio: 3 / 2;
+      background: #010711 url('assets/oryele-homepage-reference.png') top center / 100% 100% no-repeat;
+    }
+    .hotspot {
+      position: absolute;
+      display: block;
+      z-index: 3;
+      background: transparent;
+      border: 0;
+      color: transparent;
+      overflow: hidden;
+      white-space: nowrap;
+      text-indent: -9999px;
+    }
+    .hotspot:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 2px;
+      border-radius: 8px;
+    }
+    .capability-hotspot {
+      z-index: 4;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background .22s ease, border-color .22s ease, box-shadow .22s ease, transform .22s ease, filter .22s ease;
+      -webkit-transform: translateZ(0);
+      will-change: transform, box-shadow, background;
+    }
+    .capability-hotspot:hover,
+    .capability-hotspot:focus-visible {
+      background: rgba(10, 108, 255, .13);
+      border-color: rgba(78, 166, 255, .95);
+      box-shadow: 0 0 18px rgba(0, 119, 255, .65), inset 0 0 18px rgba(20, 113, 255, .12);
+      transform: translateX(-4px) scale(1.012);
+      filter: brightness(1.14);
+      outline: none;
+    }
+    .cap-digital { left: 73.7%; top: 9.8%; width: 23.4%; height: 7.4%; }
+    .cap-workflow { left: 73.7%; top: 17.9%; width: 23.4%; height: 7.4%; }
+    .cap-communications { left: 73.7%; top: 25.9%; width: 23.4%; height: 7.4%; }
+    .cap-knowledge { left: 73.7%; top: 33.9%; width: 23.4%; height: 7.4%; }
+    .cap-governance { left: 73.7%; top: 41.9%; width: 23.4%; height: 7.4%; }
+    .cap-analytics { left: 73.7%; top: 50.0%; width: 23.4%; height: 7.4%; }
+    .capability-hotspot.is-active {
+      background: rgba(10, 108, 255, .17);
+      border-color: rgba(96, 180, 255, 1);
+      box-shadow: 0 0 26px rgba(0, 119, 255, .86), inset 0 0 24px rgba(20, 113, 255, .20);
+      transform: translateX(-4px) scale(1.012);
+      filter: brightness(1.14);
+    }
+    .capability-tooltip {
+      position: absolute;
+      z-index: 12;
+      width: min(330px, 22vw);
+      padding: 18px 20px 19px;
+      border: 1px solid rgba(82, 166, 255, .92);
+      border-radius: 14px;
+      background: linear-gradient(145deg, rgba(4, 18, 38, .97), rgba(1, 9, 22, .97));
+      box-shadow: 0 18px 48px rgba(0, 0, 0, .46), 0 0 26px rgba(0, 111, 255, .30), inset 0 0 22px rgba(15, 91, 190, .09);
+      color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(10px);
+      transition: opacity .16s ease, transform .16s ease, visibility .16s ease;
+      pointer-events: none;
+      text-indent: 0;
+      white-space: normal;
+    }
+    .capability-tooltip.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+    .capability-tooltip::after {
+      content: '';
+      position: absolute;
+      right: -9px;
+      top: 28px;
+      width: 16px;
+      height: 16px;
+      border-top: 1px solid rgba(82, 166, 255, .92);
+      border-right: 1px solid rgba(82, 166, 255, .92);
+      background: rgba(3, 15, 32, .98);
+      transform: rotate(45deg);
+    }
+    .capability-tooltip .eyebrow {
+      margin: 0 0 7px;
+      color: #2494ff;
+      font-size: clamp(9px, .72vw, 12px);
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .capability-tooltip h2 {
+      margin: 0 0 8px;
+      font-size: clamp(16px, 1.45vw, 24px);
+      line-height: 1.15;
+    }
+    .capability-tooltip p {
+      margin: 0;
+      color: #d5e1ef;
+      font-size: clamp(11px, .92vw, 15px);
+      line-height: 1.48;
+    }
+    /* Header navigation */
+    .logo { left: 1.5%; top: 1.5%; width: 14.5%; height: 5.2%; }
+    .platform { left: 23.7%; top: 2.0%; width: 6.5%; height: 4.5%; }
+    .solutions { left: 30.7%; top: 2.0%; width: 6.5%; height: 4.5%; }
+    .workforce { left: 37.6%; top: 2.0%; width: 10.3%; height: 4.5%; }
+    .communications { left: 48.0%; top: 2.0%; width: 11.0%; height: 4.5%; }
+    .pricing { left: 59.2%; top: 2.0%; width: 5.0%; height: 4.5%; }
+    .resources { left: 64.7%; top: 2.0%; width: 7.2%; height: 4.5%; }
+    .about { left: 73.0%; top: 2.0%; width: 5.2%; height: 4.5%; }
+    .login-top {
+      position: absolute;
+      left: 79.2%;
+      top: 1.85%;
+      width: 5.4%;
+      height: 4.5%;
+      z-index: 6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(104, 157, 224, .62);
+      border-radius: 10px;
+      background: rgba(3, 13, 29, .82);
+      box-shadow: inset 0 0 14px rgba(15, 91, 190, .08);
+      color: #fff;
+      font-size: clamp(11px, 1.05vw, 16px);
+      font-weight: 700;
+      text-decoration: none;
+      transition: border-color .2s ease, background .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+    .login-top:hover, .login-top:focus-visible {
+      border-color: #4ca2ff;
+      background: rgba(8, 49, 105, .94);
+      box-shadow: 0 0 18px rgba(0, 119, 255, .42);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .demo-top { left: 85.8%; top: 1.6%; width: 11.3%; height: 4.9%; }
+    /* Hero CTAs */
+    .demo-main { left: 3.5%; top: 51.2%; width: 13.3%; height: 5.4%; }
+    .explore { left: 18.5%; top: 51.2%; width: 13.3%; height: 5.4%; }
+    /* Footer contacts and links */
+    .sales-email { left: 32.4%; top: 85.0%; width: 13.3%; height: 4.8%; }
+    .info-email { left: 53.0%; top: 85.0%; width: 13.0%; height: 4.8%; }
+    .linkedin { left: 71.1%; top: 83.3%; width: 4.2%; height: 6.4%; }
+    .youtube { left: 75.3%; top: 83.3%; width: 4.2%; height: 6.4%; }
+    .privacy { left: 18.5%; top: 94.1%; width: 9.2%; height: 4.2%; }
+    .terms { left: 31.2%; top: 94.1%; width: 11.5%; height: 4.2%; }
+    .sms { left: 46.4%; top: 94.1%; width: 8.3%; height: 4.2%; }
+    .cookies { left: 57.7%; top: 94.1%; width: 9.3%; height: 4.2%; }
+    .contact { left: 69.3%; top: 94.1%; width: 6.8%; height: 4.2%; }
+    .sitemap { left: 77.7%; top: 94.1%; width: 6.6%; height: 4.2%; }
+    @media (max-width: 700px) {
+      .page-shell { min-width: 700px; transform-origin: top left; }
+      body { overflow-x: auto; }
+    }
+   .skip-link{position:fixed;left:16px;top:-80px;z-index:99999;padding:12px 16px;background:#fff;color:#010711;border-radius:6px;font-weight:800;text-decoration:none}.skip-link:focus{top:16px}
+</style>
+<style>
+.oryele-overview {
+  background: #010711;
+  color: #ffffff;
+  padding: 72px 24px 88px;
+  border-top: 1px solid rgba(81, 146, 218, .28);
+}
+.oryele-overview-inner {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+.oryele-eyebrow {
+  margin: 0 0 14px;
+  color: #3599ff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.oryele-overview h1 {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(34px, 5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -.035em;
+}
+.oryele-lead {
+  max-width: 900px;
+  margin: 24px 0 40px;
+  color: #d6e3f1;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.55;
+}
+.oryele-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.oryele-grid article {
+  padding: 26px;
+  border: 1px solid rgba(79, 151, 230, .36);
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(7, 25, 51, .92), rgba(2, 11, 25, .96));
+}
+.oryele-grid h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+.oryele-grid p,
+.oryele-summary {
+  color: #c8d7e7;
+  line-height: 1.65;
+}
+.oryele-grid p {
+  margin: 0;
+}
+.oryele-summary {
+  max-width: 960px;
+  margin: 34px 0 0;
+  font-size: 17px;
+}
+@media (max-width: 760px) {
+  .oryele-overview {
+    padding: 54px 20px 66px;
+  }
+  .oryele-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style><link href="https://oryele.ai/" rel="canonical"/><meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/><meta content="#010711" name="theme-color"/><meta content="strict-origin-when-cross-origin" name="referrer"/><link href="site.webmanifest" rel="manifest"/><link href="assets/oryele-icon.png" rel="apple-touch-icon"/><meta content="website" property="og:type"/><meta content="Oryele" property="og:site_name"/><meta content="en_US" property="og:locale"/><meta content="https://oryele.ai/" property="og:url"/><meta content="Oryele AI Enterprise Execution Platform" property="og:title"/><meta content="Oryele is an AI Enterprise Execution Platform that deploys governed AI Digital Workers to automate workflows, orchestrate business processes, manage documents and communications, and execute work securely across enterprise systems." property="og:description"/><meta content="https://oryele.ai/assets/oryele-homepage-reference.png" property="og:image"/><meta content="https://oryele.ai/assets/oryele-homepage-reference.png" property="og:image:secure_url"/><meta content="image/png" property="og:image:type"/><meta content="Oryele AI Enterprise Execution Platform" property="og:image:alt"/><meta content="summary_large_image" name="twitter:card"/><meta content="Oryele AI Enterprise Execution Platform" name="twitter:title"/><meta content="Oryele is an AI Enterprise Execution Platform that deploys governed AI Digital Workers to automate workflows, orchestrate business processes, manage documents and communications, and execute work securely across enterprise systems." name="twitter:description"/><meta content="https://oryele.ai/assets/oryele-homepage-reference.png" name="twitter:image"/><meta content="Oryele AI Enterprise Execution Platform" name="twitter:image:alt"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://oryele.ai/#organization","name":"Oryele","alternateName":"Oryele AI","legalName":"Oryele LLC","url":"https://oryele.ai/","logo":{"@type":"ImageObject","@id":"https://oryele.ai/#logo","url":"https://oryele.ai/assets/oryele-logo.png","contentUrl":"https://oryele.ai/assets/oryele-logo.png","caption":"Oryele"},"image":{"@id":"https://oryele.ai/#logo"},"description":"Oryele provides an enterprise execution platform for governed AI digital workers, workflow automation, document intelligence, communications, analytics, and operational control.","foundingDate":"2026","address":{"@type":"PostalAddress","streetAddress":"1021 Broad St. #1129","addressLocality":"Shrewsbury","addressRegion":"NJ","postalCode":"07702","addressCountry":"US"},"contactPoint":[{"@type":"ContactPoint","contactType":"sales","email":"sales@oryele.com","availableLanguage":"English"},{"@type":"ContactPoint","contactType":"customer support","email":"support@oryele.com","availableLanguage":"English"}],"sameAs":["https://www.linkedin.com/company/oryele","https://www.youtube.com/@oryele"]},{"@type":"WebSite","@id":"https://oryele.ai/#website","url":"https://oryele.ai/","name":"Oryele","alternateName":"Oryele AI","publisher":{"@id":"https://oryele.ai/#organization"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","@id":"https://oryele.ai#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://oryele.ai/"}]},{"@type":"WebPage","@id":"https://oryele.ai#webpage","url":"https://oryele.ai/","name":"Oryele AI Enterprise Execution Platform","description":"Oryele is an AI Enterprise Execution Platform that deploys governed AI Digital Workers to automate workflows, orchestrate business processes, manage documents and communications, and execute work securely across enterprise systems.","isPartOf":{"@id":"https://oryele.ai/#website"},"about":{"@id":"https://oryele.ai/#organization"},"breadcrumb":{"@id":"https://oryele.ai/#breadcrumb"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://oryele.ai/assets/oryele-homepage-reference.png","caption":"Oryele AI Enterprise Execution Platform"},"dateModified":"2026-07-16","inLanguage":"en-US"},{"@type":"SoftwareApplication","@id":"https://oryele.ai/#software","name":"Oryele Enterprise Execution Platform","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://oryele.ai/","description":"Oryele is an AI Enterprise Execution Platform that deploys governed AI Digital Workers to automate workflows, orchestrate business processes, manage documents and communications, and execute work securely across enterprise systems.","publisher":{"@id":"https://oryele.ai/#organization"},"offers":{"@type":"Offer","url":"https://oryele.ai/pricing","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"USD","description":"Contact Oryele for enterprise pricing."}}}]}</script></head>
+<body><a class="skip-link" href="#main-content">Skip to main content</a>
+<main aria-label="Oryele homepage" class="page-shell" id="main-content">
+<a class="hotspot logo" href="/">Oryele home</a>
+<a class="hotspot platform" href="/platform">Platform</a>
+<a class="hotspot solutions" href="/solutions">Solutions</a>
+<a class="hotspot workforce" href="/digital-workforce">Digital Workforce</a>
+<a class="hotspot communications" href="/communications">Communications</a>
+<a class="hotspot pricing" href="/pricing">Pricing</a>
+<a class="hotspot resources" href="/resources">Resources</a>
+<a class="hotspot about" href="/about">About</a>
+<a class="login-top" href="https://app.oryele.com">Login</a>
+<a class="hotspot demo-top" href="/contact">Request a Demo</a>
+<a class="hotspot demo-main" href="/contact">Request a Demo</a>
+<a class="hotspot explore" href="/platform">Explore Platform</a>
+<a aria-label="Digital Workforce details" class="hotspot capability-hotspot cap-digital" data-capability="digital" href="/digital-workforce">Digital Workforce</a>
+<a aria-label="Workflow Engine details" class="hotspot capability-hotspot cap-workflow" data-capability="workflow" href="/workflow-engine">Workflow Engine</a>
+<a aria-label="Communications details" class="hotspot capability-hotspot cap-communications" data-capability="communications" href="/communications">Communications</a>
+<a aria-label="Knowledge details" class="hotspot capability-hotspot cap-knowledge" data-capability="knowledge" href="/knowledge-management">Knowledge</a>
+<a aria-label="Governance details" class="hotspot capability-hotspot cap-governance" data-capability="governance" href="/trust">Governance</a>
+<a aria-label="Analytics details" class="hotspot capability-hotspot cap-analytics" data-capability="analytics" href="/analytics">Analytics</a>
+<a class="hotspot sales-email" href="mailto:sales@oryele.com">sales@oryele.com</a>
+<a class="hotspot info-email" href="mailto:info@oryele.com">info@oryele.com</a>
+<a class="hotspot linkedin" href="https://www.linkedin.com/company/oryele" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a class="hotspot youtube" href="https://www.youtube.com/@oryele" rel="noopener noreferrer" target="_blank">YouTube</a>
+<a class="hotspot privacy" href="/privacy">Privacy Policy</a>
+<a class="hotspot terms" href="/terms">Terms and Conditions</a>
+<a class="hotspot sms" href="/sms-consent">SMS Policy</a>
+<a class="hotspot cookies" href="/cookies">Cookie Policy</a>
+<a class="hotspot contact" href="/contact">Contact</a>
+<a class="hotspot sitemap" href="/sitemap">Sitemap</a>
+<aside aria-hidden="true" class="capability-tooltip" id="capabilityTooltip" role="tooltip">
+<div class="eyebrow">Oryele Platform Capability</div>
+<h2 id="capabilityTitle"></h2>
+<p id="capabilityText"></p>
+</aside>
+</main><section aria-labelledby="oryele-overview-title" class="oryele-overview" id="oryele-overview">
+<div class="oryele-overview-inner">
+<p class="oryele-eyebrow">Enterprise AI Execution</p>
+<h1 id="oryele-overview-title">Oryele AI Enterprise Execution Platform</h1>
+<p class="oryele-lead">Oryele deploys governed AI Digital Workers that execute real business operations across people, systems, documents, communications, and workflows.</p>
+<div class="oryele-grid">
+<article>
+<h2>AI Digital Workers</h2>
+<p>Deploy digital workers that perform repeatable tasks, coordinate across enterprise applications, and escalate exceptions for human review.</p>
+</article>
+<article>
+<h2>Workflow Automation</h2>
+<p>Orchestrate end to end business processes across teams, applications, documents, communications, and AI.</p>
+</article>
+<article>
+<h2>Document Intelligence</h2>
+<p>Capture, classify, extract, route, retain, and govern business documents within the workflows they support.</p>
+</article>
+<article>
+<h2>Enterprise Governance</h2>
+<p>Apply role based access, policy controls, audit trails, retention, compliance oversight, and human approval to AI assisted execution.</p>
+</article>
+</div>
+<p class="oryele-summary">Built for organizations that need measurable execution rather than isolated automation, Oryele unifies operational work within one governed enterprise execution layer.</p>
+</div>
+</section>
+<script>
+    (() => {
+      const summaries = {
+        digital: { title: 'Digital Workforce', text: 'Deploy AI-powered digital workers that execute repeatable business tasks, coordinate across systems, and escalate exceptions when human judgment is required.' },
+        workflow: { title: 'Workflow Engine', text: 'Design and orchestrate end-to-end processes across people, applications, documents, and AI so work moves consistently from initiation through completion.' },
+        communications: { title: 'Communications', text: 'Unify email, SMS, voice, and calendar activity within each workflow, keeping customer and operational interactions connected to the work they support.' },
+        knowledge: { title: 'Knowledge', text: 'Centralize documents, policies, and operational knowledge so teams and digital workers can retrieve trusted information securely and in context.' },
+        governance: { title: 'Governance', text: 'Apply role-based controls, policy enforcement, audit trails, retention, and compliance oversight to every workflow and AI-assisted action.' },
+        analytics: { title: 'Analytics', text: 'Monitor work, performance, bottlenecks, service levels, and outcomes in real time, turning execution data into practical operational insight.' }
+      };
+
+      const shell = document.querySelector('.page-shell');
+      const tooltip = document.getElementById('capabilityTooltip');
+      const title = document.getElementById('capabilityTitle');
+      const text = document.getElementById('capabilityText');
+      const buttons = [...document.querySelectorAll('[data-capability]')];
+
+      function showSummary(button) {
+        const item = summaries[button.dataset.capability];
+        if (!item) return;
+        buttons.forEach(b => b.classList.toggle('is-active', b === button));
+        title.textContent = item.title;
+        text.textContent = item.text;
+
+        const shellRect = shell.getBoundingClientRect();
+        const buttonRect = button.getBoundingClientRect();
+        const tooltipWidth = tooltip.offsetWidth || Math.min(330, shellRect.width * .22);
+        const left = buttonRect.left - shellRect.left - tooltipWidth - 22;
+        const maxTop = shellRect.height - (tooltip.offsetHeight || 150) - 12;
+        const top = Math.max(12, Math.min(buttonRect.top - shellRect.top + 2, maxTop));
+        tooltip.style.left = `${left}px`;
+        tooltip.style.top = `${top}px`;
+        tooltip.classList.add('open');
+        tooltip.setAttribute('aria-hidden', 'false');
+      }
+
+      function hideSummary() {
+        tooltip.classList.remove('open');
+        tooltip.setAttribute('aria-hidden', 'true');
+        buttons.forEach(b => b.classList.remove('is-active'));
+      }
+
+      buttons.forEach(button => {
+        button.addEventListener('mouseenter', () => showSummary(button));
+        button.addEventListener('focus', () => showSummary(button));
+        button.addEventListener('mouseleave', hideSummary);
+        button.addEventListener('blur', hideSummary);
+      });
+      window.addEventListener('resize', hideSummary, { passive: true });
+    })();
+  </script>
+<footer class="site-footer">
+<div class="footer-main">
+<div class="footer-company">
+<img alt="Oryele" decoding="async" loading="lazy" src="assets/oryele-icon-transparent.png"/>
+<div><strong>Oryele LLC</strong><p>1021 Broad St. #1129<br/>Shrewsbury, NJ 07702<br/>United States</p></div>
+</div>
+<div class="footer-contact"><span aria-hidden="true" class="footer-mail">✉</span><div><strong>Sales Inquiries</strong><a href="mailto:sales@oryele.com">sales@oryele.com</a></div></div>
+<div class="footer-contact"><span aria-hidden="true" class="footer-mail">✉</span><div><strong>General Inquiries</strong><a href="mailto:info@oryele.com">info@oryele.com</a></div></div>
+<div class="footer-contact"><span aria-hidden="true" class="footer-mail">✉</span><div><strong>Support</strong><a href="mailto:support@oryele.com">support@oryele.com</a></div></div>
+<div class="footer-copyright">© 2026 Oryele LLC.<br/>All rights reserved.</div>
+</div>
+<nav aria-label="Footer" class="footer-legal">
+<a href="/">Home</a>
+<a href="/solutions">Solutions</a>
+<a href="/platform">Platform</a>
+<a href="/resources">Resources</a>
+<a href="/contact">Contact</a>
+<a href="/privacy">Privacy Policy</a>
+<a href="/terms">Terms &amp; Conditions</a>
+<a href="/sms-consent">SMS Consent</a>
+<a href="/support">Support</a>
+<a href="/cookies">Cookie Policy</a>
+<a href="/sitemap">Sitemap</a>
+</nav>
+</footer>
+</body>
+</html>
