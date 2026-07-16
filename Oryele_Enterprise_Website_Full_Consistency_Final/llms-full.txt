@@ -1,0 +1,31 @@
+# Oryele
+
+> Oryele is an enterprise execution platform for governed AI digital workers, workflow automation, document intelligence, communications, integrations, analytics, and operational control.
+
+## Primary pages
+- [Home](https://oryele.ai/): Company and platform overview
+- [Platform](https://oryele.ai/platform.html): Enterprise execution platform
+- [Digital Workforce](https://oryele.ai/digital-workforce.html): Governed AI digital workers
+- [Workflow Engine](https://oryele.ai/workflow-engine.html): Workflow orchestration
+- [Solutions](https://oryele.ai/solutions.html): Industry and operational solutions
+- [Accounting](https://oryele.ai/accounting.html): Accounting-firm workflows
+- [Insurance](https://oryele.ai/insurance.html): Insurance workflows
+- [Legal](https://oryele.ai/legal.html): Legal workflows
+- [Integrations](https://oryele.ai/integrations.html): Enterprise integrations
+- [Trust](https://oryele.ai/trust.html): Security, governance, and trust
+- [Resources](https://oryele.ai/resources.html): White papers and resources
+- [Contact](https://oryele.ai/contact.html): Contact and enterprise briefing
+
+## Policies
+- [Privacy](https://oryele.ai/privacy.html)
+- [Terms](https://oryele.ai/terms.html)
+- [Cookie Policy](https://oryele.ai/cookies.html)
+- [SMS Consent](https://oryele.ai/sms-consent.html)
+
+## Contact
+- General: info@oryele.com
+- Sales: sales@oryele.com
+
+## Sitemap
+- https://oryele.ai/sitemap.xml
+- Support: https://oryele.ai/support.html

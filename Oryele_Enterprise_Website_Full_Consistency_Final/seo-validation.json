@@ -1,0 +1,445 @@
+{
+  "build_date": "2026-07-14",
+  "pages": [
+    {
+      "file": "about.html",
+      "url": "https://oryele.ai/about.html",
+      "title": "About Oryele | Enterprise AI Execution",
+      "title_len": 38,
+      "description_len": 135,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "AboutPage",
+        "BreadcrumbList",
+        "Organization",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "accounting.html",
+      "url": "https://oryele.ai/accounting.html",
+      "title": "AI Workflow Automation for Accounting Firms | Oryele",
+      "title_len": 52,
+      "description_len": 146,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "Service",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "ai-center.html",
+      "url": "https://oryele.ai/ai-center.html",
+      "title": "Enterprise AI Center and Governance | Oryele",
+      "title_len": 44,
+      "description_len": 139,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "SoftwareApplication",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "analytics.html",
+      "url": "https://oryele.ai/analytics.html",
+      "title": "Enterprise Execution Analytics | Oryele",
+      "title_len": 39,
+      "description_len": 132,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "Service",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "blog.html",
+      "url": "https://oryele.ai/blog.html",
+      "title": "Oryele | Blog",
+      "title_len": 13,
+      "description_len": 64,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "CollectionPage",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "client-portal.html",
+      "url": "https://oryele.ai/client-portal.html",
+      "title": "Oryele | Client Portal",
+      "title_len": 22,
+      "description_len": 73,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "Service",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "collaboration.html",
+      "url": "https://oryele.ai/collaboration.html",
+      "title": "Oryele | Collaboration",
+      "title_len": 22,
+      "description_len": 73,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "Service",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "communications.html",
+      "url": "https://oryele.ai/communications.html",
+      "title": "Oryele | Communications",
+      "title_len": 23,
+      "description_len": 79,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "Service",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "contact.html",
+      "url": "https://oryele.ai/contact.html",
+      "title": "Contact Oryele | Request an Enterprise AI Briefing",
+      "title_len": 50,
+      "description_len": 137,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "ContactPage",
+        "Organization",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "cookies.html",
+      "url": "https://oryele.ai/cookies.html",
+      "title": "Oryele | Cookie Policy",
+      "title_len": 22,
+      "description_len": 73,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "digital-workforce.html",
+      "url": "https://oryele.ai/digital-workforce.html",
+      "title": "Governed AI Digital Workers | Oryele",
+      "title_len": 36,
+      "description_len": 137,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "Service",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "experience.html",
+      "url": "https://oryele.ai/experience.html",
+      "title": "Experience Oryele | Enterprise Execution Platform",
+      "title_len": 49,
+      "description_len": 70,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "SoftwareApplication",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "index.html",
+      "url": "https://oryele.ai/",
+      "title": "Oryele AI Enterprise Execution Platform",
+      "title_len": 39,
+      "description_len": 231,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "SoftwareApplication",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "insurance.html",
+      "url": "https://oryele.ai/insurance.html",
+      "title": "AI Workflow Automation for Insurance | Oryele",
+      "title_len": 45,
+      "description_len": 136,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "Service",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "integrations.html",
+      "url": "https://oryele.ai/integrations.html",
+      "title": "Enterprise Application Integrations | Oryele",
+      "title_len": 44,
+      "description_len": 132,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "SoftwareApplication",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "knowledge-management.html",
+      "url": "https://oryele.ai/knowledge-management.html",
+      "title": "Oryele | Knowledge Management",
+      "title_len": 29,
+      "description_len": 80,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "Service",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "legal.html",
+      "url": "https://oryele.ai/legal.html",
+      "title": "AI Workflow Automation for Legal Teams | Oryele",
+      "title_len": 47,
+      "description_len": 125,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "Service",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "ocr.html",
+      "url": "https://oryele.ai/ocr.html",
+      "title": "AI Document Intelligence and OCR | Oryele",
+      "title_len": 41,
+      "description_len": 132,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "Service",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "platform.html",
+      "url": "https://oryele.ai/platform.html",
+      "title": "Enterprise AI Execution Platform | Oryele",
+      "title_len": 41,
+      "description_len": 141,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "SoftwareApplication",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "pricing.html",
+      "url": "https://oryele.ai/pricing.html",
+      "title": "Oryele Enterprise Pricing | Request a Briefing",
+      "title_len": 46,
+      "description_len": 142,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "privacy.html",
+      "url": "https://oryele.ai/privacy.html",
+      "title": "Privacy Policy \u2014 Oryele",
+      "title_len": 23,
+      "description_len": 71,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "resources.html",
+      "url": "https://oryele.ai/resources.html",
+      "title": "Enterprise AI Resources and White Papers | Oryele",
+      "title_len": 49,
+      "description_len": 130,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "CollectionPage",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "sitemap.html",
+      "url": "https://oryele.ai/sitemap.html",
+      "title": "Oryele | Sitemap",
+      "title_len": 16,
+      "description_len": 45,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "CollectionPage",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "sms-consent.html",
+      "url": "https://oryele.ai/sms-consent.html",
+      "title": "SMS Policy \u2014 Oryele",
+      "title_len": 19,
+      "description_len": 75,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "solutions.html",
+      "url": "https://oryele.ai/solutions.html",
+      "title": "Oryele | Solutions",
+      "title_len": 18,
+      "description_len": 107,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "CollectionPage",
+        "Organization",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "terms.html",
+      "url": "https://oryele.ai/terms.html",
+      "title": "Terms & Conditions \u2014 Oryele",
+      "title_len": 27,
+      "description_len": 69,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "trust.html",
+      "url": "https://oryele.ai/trust.html",
+      "title": "Oryele | Trust Center",
+      "title_len": 21,
+      "description_len": 115,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "WebPage",
+        "WebSite"
+      ]
+    },
+    {
+      "file": "workflow-engine.html",
+      "url": "https://oryele.ai/workflow-engine.html",
+      "title": "Enterprise Workflow Orchestration Engine | Oryele",
+      "title_len": 49,
+      "description_len": 134,
+      "indexable": true,
+      "h1_count": 1,
+      "schema_types": [
+        "BreadcrumbList",
+        "Organization",
+        "Service",
+        "WebPage",
+        "WebSite"
+      ]
+    }
+  ],
+  "errors": [],
+  "warnings": []
+}

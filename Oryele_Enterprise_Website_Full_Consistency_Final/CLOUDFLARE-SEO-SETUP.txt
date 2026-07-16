@@ -1,0 +1,28 @@
+ORYELE CLOUDFLARE DOMAIN REDIRECT SETUP
+
+Primary/canonical domain: https://oryele.ai
+Alias domain: oryele.com and www.oryele.com
+
+Create this in the ORYELE.COM Cloudflare zone:
+1. Cloudflare Dashboard > oryele.com > Rules > Redirect Rules.
+2. Create a Single Redirect named: Oryele .com to .ai
+3. Incoming requests expression:
+   (http.host eq "oryele.com") or (http.host eq "www.oryele.com")
+4. Dynamic target URL expression:
+   concat("https://oryele.ai", http.request.uri.path)
+5. Status code: 301
+6. Preserve query string: Enabled
+7. Deploy the rule.
+
+DNS REQUIREMENT
+The oryele.com apex and www records must exist and be Proxied (orange cloud) for Cloudflare redirect rules to execute.
+
+TESTS
+https://oryele.com/ -> https://oryele.ai/
+https://oryele.com/about.html -> https://oryele.ai/about.html
+https://www.oryele.com/contact.html?source=test -> https://oryele.ai/contact.html?source=test
+
+GOOGLE SEARCH CONSOLE
+1. Verify Domain properties for oryele.ai and oryele.com using DNS verification.
+2. Submit https://oryele.ai/sitemap.xml in the oryele.ai property only.
+3. Google Search Console no longer has a preferred-domain selector. The 301 redirects, canonical tags, sitemap URLs, and internal links establish oryele.ai as canonical.
