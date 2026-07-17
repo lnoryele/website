@@ -1,0 +1,22 @@
+{
+  "name": "Oryele Enterprise Execution Platform",
+  "short_name": "Oryele",
+  "description": "Oryele provides an enterprise execution platform for governed AI digital workers, workflow automation, document intelligence, communications, analytics, and operational control.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#010711",
+  "theme_color": "#010711",
+  "icons": [
+    {
+      "src": "/assets/oryele-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/oryele-icon-transparent.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
