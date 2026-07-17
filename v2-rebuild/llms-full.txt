@@ -1,0 +1,44 @@
+# Oryele Enterprise Execution Platform
+
+Oryele is a governed enterprise execution platform that coordinates people, systems, communications, documents, knowledge, and AI digital workers. It sits above existing CRMs, ERPs, practice-management tools, email, portals, and collaboration systems to move work from initiation through completion with auditability and human oversight.
+
+## Platform
+The Oryele platform combines digital workers, workflow orchestration, communications, knowledge management, governance, analytics, OCR, integrations, and a secure client portal. Organizations use the platform to reduce missed follow-ups, automate repetitive operational work, enforce defined processes, and create measurable visibility into throughput and service delivery.
+
+## Digital Workforce
+Oryele Digital Workers execute repeatable business tasks under defined policies. They coordinate across systems, communicate with clients and internal teams, collect and route documents, update records, monitor deadlines, and escalate exceptions when human judgment is required.
+
+## Workflow Engine
+The workflow engine governs multi-step processes spanning people, AI, systems, approvals, business rules, and service-level commitments. It provides structured execution, ownership, exception handling, status visibility, and complete audit trails.
+
+## Communications
+Oryele connects email, SMS, voice, calendar, Microsoft Teams, Slack, and notifications to business workflows. Communications are triggered, tracked, governed, and associated with the correct client, matter, policy, task, or operational process.
+
+## Knowledge and Documents
+Knowledge management and OCR capabilities connect trusted enterprise information, SOPs, contracts, forms, client documents, and repositories such as SharePoint and OneDrive. Digital Workers use governed context rather than unverified public information.
+
+## Governance and Trust
+The platform supports role-based access, approval controls, audit trails, retention, legal hold, security policies, compliance oversight, and human escalation. The Trust Center explains Oryele's approach to enterprise security and governance.
+
+## Analytics
+Oryele measures throughput, bottlenecks, SLA performance, workload, exceptions, utilization, and operational outcomes. Dashboards help leaders understand where work is delayed and where automation is improving service delivery.
+
+## Professional Services Solutions
+Oryele initially focuses on accounting, legal, insurance, financial services, healthcare, technology, and other professional-services organizations. Common use cases include client onboarding, document collection, deadline tracking, matter execution, policy and claims workflows, renewals, communications, review processes, and operational follow-up.
+
+## Pricing and Contact
+Pricing includes Foundation, Professional, and Enterprise tiers. Organizations can request a briefing or demonstration through the contact page. Sales inquiries may be sent to sales@oryele.com, general inquiries to info@oryele.com, and support requests to support@oryele.com.
+
+## Key URLs
+- Home: https://oryele.ai/
+- Platform: https://oryele.ai/platform
+- Solutions: https://oryele.ai/solutions
+- Digital Workforce: https://oryele.ai/digital-workforce
+- Communications: https://oryele.ai/communications
+- Pricing: https://oryele.ai/pricing
+- Resources: https://oryele.ai/resources
+- Why Oryele: https://oryele.ai/why-oryele
+- About: https://oryele.ai/about
+- Contact: https://oryele.ai/contact
+- Support: https://oryele.ai/support
+- Trust Center: https://oryele.ai/trust
